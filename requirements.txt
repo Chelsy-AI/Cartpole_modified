@@ -1,0 +1,7 @@
+gymnasium[classic_control]
+stable-baselines3
+tensorboard
+optuna
+numpy
+pandas
+matplotlib
