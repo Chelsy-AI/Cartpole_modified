@@ -91,3 +91,19 @@ out/
 # Other files
 *.bak
 *.swp
+
+
+# Local Optuna/CartPole artifacts
+.venv_hpo/
+
+# Ignore bulk HPO outputs…
+hpo_results/*
+
+# …but keep key deliverables
+!hpo_results/**/best_params.json
+!hpo_results/**/all_trials.csv
+!hpo_results/**/progress_report.html
+!hpo_results/progress_history.json
+!hpo_results/progress_report.html
+
+.venv/

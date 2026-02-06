@@ -1,0 +1,21 @@
+{
+  "student_name": "Andrea Churchwell",
+  "best_reward": 500.0,
+  "best_params": {
+    "learning_rate": 0.351159658203541,
+    "reward_shaping_scale": 0.1903872219557893,
+    "num_bins": 9,
+    "epsilon_decay_episodes": 1043,
+    "discount_factor": 0.9863165063678174
+  },
+  "switches": {
+    "USE_ADAPTIVE_LR": true,
+    "USE_SMART_EXPLORATION": true,
+    "USE_CUSTOM_BINS": true,
+    "USE_REWARD_SHAPING": true,
+    "USE_HPO": true
+  },
+  "n_trials": 120,
+  "total_time_seconds": 602.2107827663422,
+  "timestamp": "20260206_153822"
+}
