@@ -91,3 +91,18 @@ out/
 # Other files
 *.bak
 *.swp
+
+
+# Local Optuna/CartPole artifacts
+# Local Optuna/CartPole artifacts
+.venv_hpo/
+
+# ignore everything in results by default…
+hpo_results/*
+
+# …but KEEP the key artifacts you need for the assignment
+!hpo_results/**/best_params.json
+!hpo_results/**/all_trials.csv
+!hpo_results/**/progress_report.html
+
+.venv/
