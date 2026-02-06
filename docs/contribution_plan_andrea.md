@@ -1,75 +1,89 @@
-# Contribution Plan
+Contribution Plan – Andrea Churchwell
 
-**Team:** TeamTwo  
-**Created:** W19D2  
-**Last Updated:** 2026-02-06
+Team: TeamTwo
+Created: W19D2
+Last Updated: 2026-02-06
 
----
+Personal Focus
 
-## Problem Statement
+My focus this week was understanding why CartPole results change, not just how to make the number go up. I worked primarily on hyperparameter tuning, result interpretation, and connecting observed performance back to training dynamics (episodes, trials, variance).
 
-The baseline PPO agent provides a reference performance on CartPole, but we aim to improve and validate performance through systematic hyperparameter optimization using Optuna.
+Problem Context
 
----
+Early results showed that single runs could produce deceptively high rewards. The main problem I focused on was distinguishing stable improvement from lucky runs, and learning how systematic hyperparameter optimization (HPO) helps reduce that uncertainty.
 
-## Scope
+Scope of My Work
+What I DID
 
-### What We WILL Do
-- [x] Run PPO hyperparameter optimization using Optuna
-- [x] Compare trial performance using mean reward
-- [x] Export leaderboard and best configuration
-- [x] Document rationale for selected ship candidate
+ Ran multiple CartPole experiments to understand baseline variance
 
-### What We WON'T Do
-- [ ] Modify PPO architecture
-- [ ] Add new algorithms beyond PPO
-- [ ] Tune environment dynamics
+ Observed and documented the impact of “lucky” high-reward runs
 
----
+ Ran Optuna-based HPO to search hyperparameter space
 
-## Files We Touched
+ Increased episode count and trial count to allow learning to stabilize
 
-| File | Change Type | Owner |
-|------|------------|-------|
-| `notebooks/W19D4_hpo.ipynb` | Run | Andrea C |
-| `results/hpo_leaderboard.csv` | Create / Update | Andrea C |
-| `results/best_config.json` | Create / Update | Andrea C |
-| `docs/ship_candidate.md` | Create | Andrea C |
+ Interpreted HPO outputs to identify reliable configurations
 
----
+ Saved best-performing configurations and trial results for review
 
-## Definition of Done
+What I DID NOT Do
 
-- [x] HPO notebook runs end-to-end without errors
-- [x] 25+ Optuna trials completed
-- [x] Results exported to `results/`
-- [x] Ship candidate documented
-- [ ] PR reviewed and merged by maintainer
+ Modify algorithm architecture
 
----
+ Introduce new RL algorithms
 
-## Evidence Artifacts Produced
+ Claim baseline improvements without validation
 
-1. `results/hpo_leaderboard.csv` — ranked Optuna trial results  
-2. `results/best_config.json` — selected ship candidate hyperparameters  
-3. `docs/ship_candidate.md` — explanation of why this config won  
+ Finalize team-wide A/B comparisons
 
----
+Files I Worked With
+| File                               | Description                                       |
+| ---------------------------------- | ------------------------------------------------- |
+| `w19d4_starter.py`                 | Ran fixed and HPO modes, adjusted episodes/trials |
+| `hpo_results/*/best_params.json`   | Saved best-performing configurations              |
+| `hpo_results/*/all_trials.csv`     | Reviewed Optuna trial distributions               |
+| `hpo_results/progress_report.html` | Visualized learning and comparison history        |
 
-## Risks
 
-| Risk | Mitigation |
-|------|------------|
-| Environment saturation (500 cap) | Acknowledge limitation; evaluate across seeds in W20 |
-| Lucky evaluation runs | Use A/B testing with confidence intervals |
-| Coordination delays | Keep work isolated in feature branch |
+Best HPO configuration achieving consistent high evaluation scores
 
----
+Optuna trial logs showing performance spread across trials
 
-## Timeline
+Progress report comparing multiple runs and configurations
 
-| Day | Milestone |
-|-----|-----------|
-| W19D4 | Initial HPO run |
-| W19 Weekend | Expanded to 25 trials |
-| W19 Sunday | Ship candidate documented |
+These artifacts support conclusions about stability vs variance rather than a single “best run.”
+
+Key Learnings
+
+High rewards early on can be misleading without repetition.
+
+Increasing episodes allows the agent time to converge.
+
+Increasing trials allows Optuna to find better regions of the search space.
+
+HPO is most effective when paired with sufficient training budget.
+
+A solved environment (≥195) does not automatically imply optimal or stable performance.
+
+Current Limitations
+
+Results have not yet been validated across multiple fixed seeds.
+
+No formal baseline vs ship-candidate A/B test has been completed.
+
+Team PR workflow needs further practice and standardization.
+
+Next Steps
+
+Re-run best configuration across multiple seeds
+
+Compare against a fixed baseline under identical conditions
+
+Document evaluation protocol clearly
+
+Support team-level merge and PR cleanup as needed
+
+Reflection
+
+This week shifted my understanding from “getting a high score” to understanding what the score actually means. The work done here sets the foundation for more rigorous evaluation in Week 20.
