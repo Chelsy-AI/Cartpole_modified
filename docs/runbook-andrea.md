@@ -67,6 +67,19 @@ We have strong evidence that:
 
 A formal A/B comparison using identical seeds and evaluation settings is still needed.
 
+## Reproducibility Notes
+
+Experiments were run using the `w19d4_starter.py` script.
+
+Hyperparameter optimization was performed using Optuna with varying numbers of trials
+(25–120) and increased episode budgets to allow convergence.
+
+Due to stochasticity in reinforcement learning, exact scores may vary between runs.
+However, rerunning the script with similar episode counts and trials should reproduce
+the overall performance trends observed (baseline < tuned < HPO).
+
+Best-performing hyperparameters are saved in `hpo_results/*/best_params.json`.
+
 Next Steps
 - Standardize a true baseline (fixed params, fixed seeds)
 - Select a single “ship candidate” from HPO results

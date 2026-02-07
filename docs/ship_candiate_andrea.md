@@ -53,8 +53,8 @@ Evidence Summary
 - Best trial: #18
 
 Artifacts saved:
-- hpo_results/<timestamp>/best_params.json
-- hpo_results/<timestamp>/all_trials.csv
+- hpo_results/andrea_churchwell_20260206_153822/best_params.json
+- hpo_results/andrea_churchwell_20260206_153822/all_trials.csv
 - progress_report.html
 
 Multiple configurations reached near-maximum reward, but this one was chosen due to:
