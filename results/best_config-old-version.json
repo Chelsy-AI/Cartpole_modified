@@ -1,0 +1,11 @@
+{
+  "trial_number": 2,
+  "mean_reward": 500.0,
+  "params": {
+    "learning_rate": 0.000684792009557478,
+    "n_steps": 256,
+    "gamma": 0.9500582921874066,
+    "ent_coef": 0.0001402497132660034,
+    "clip_range": 0.11393512381599932
+  }
+}
