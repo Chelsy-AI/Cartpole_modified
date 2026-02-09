@@ -1,0 +1,48 @@
+# Contribution Plan (W19)
+
+Tashoy requested PR
+Reviewer is Andrea Churchwell
+All changes will be made on a branch → pushed → opened as a Pull Request → reviewed by at least one teammate → merged into main.
+Only the Maintainer merges PRs into main to prevent conflicts and keep main stable.
+
+
+## Branching Rules
+- We will not commit directly to `main`.
+- Each change will be made in a separate branch.
+- Branch naming format:
+  - `feature/<name>-<short-description>`
+  - `docs/<name>-update`
+
+## Pull Request Workflow
+1. Create a branch from `main`
+2. Make a small change (code, docs, or results)
+3. Commit with a clear message
+4. Push branch to GitHub
+5. Open a PR into `main`
+6. Request review from at least one teammate
+7. Address feedback (if needed)
+8. Merge PR after approval
+
+## Review Expectations
+- Each PR must receive at least 1 review before merging.
+- Reviewers will leave at least one comment (approval or suggestion).
+- PR authors should respond to comments and update the PR if changes are needed.
+
+## Merge Rules
+- The Maintainer is responsible for merging PRs into `main`.
+- PRs should only be merged when CI checks pass (if applicable) and the PR is approved.
+
+## Results / Evidence Rules
+- Any training or HPO run must commit artifacts into `results/`.
+- Required artifacts include:
+  - `results/hpo_leaderboard.csv`
+  - `results/best_config.json`
+- Key metrics (baseline and best mean reward) must be documented in:
+  - `docs/eval_protocol.md`
+  - `docs/ship_candidate.md`
+
+## Conflict Handling
+- If a merge conflict happens, the PR author will pull latest `main`,
+  resolve the conflict locally, and push an updated branch.
+
+
