@@ -3,26 +3,49 @@
 ## Goal
 Compare baseline (A) vs ship candidate (B) using the same evaluation protocol.
 
+
 ## Variants
-- **A (Baseline):** W19 baseline configuration (from baseline notebook / baseline run)
-- **B (Ship Candidate):** `results/best_config.json`
+- **A (Baseline):** DEFAULT_PARAMS from `w19d4_starter.py`
+- **B (Ship Candidate):** Best HPO configuration saved in:
+  `hpo_results/<timestamp>/best_params.json`
+
 
 ## Primary Metric
-Mean episodic return (average reward over evaluation episodes).
+Mean episodic return (average reward across evaluation episodes).
+
+---
 
 ## Evaluation Plan
-- Run **A** with **5 seeds**
-- Run **B** with **5 seeds**
-- Record results to `results/final_eval.csv` with columns:
-  - variant (A or B)
-  - seed
-  - mean_reward
+Final evaluation is performed using:
+```
+python final_eval_qlearning.py
+```
+This script:
+
+- Loads `hpo_results/<timestamp>/best_params.json`
+- Runs BOTH variants with identical improvement switches
+- Uses 5 seeds per variant
+- Saves results to: `results/final_eval.csv`
+Columns:
+- variant (A or B)
+- seed
+- mean_reward
+
+---
 
 ## Decision Rule
-Compute a confidence interval for **(B − A)**:
-- If CI is entirely **> 0** → **SHIP**
-- If CI includes **0** → **ITERATE** (need more data)
-- If CI is entirely **< 0** → **REVERT**
+Compute comparison of **B vs A**:
+
+- If B consistently outperforms A → SHIP
+- If results overlap heavily or are unstable → ITERATE
+- If B performs worse → REVERT
+
+(Note: Due to RL variance, interpretation focuses on overall trend and stability,
+not just single runs.)
+
+---
 
 ## Notes
-Keep eval settings consistent with `docs/eval_protocol_andrea.md` (timesteps, eval episodes, etc.).
+- Evaluation settings match `docs/eval_protocol_andrea.md`.
+- Notebook-based evaluation is no longer used; all experiments run through
+`w19d4_starter.py` and `final_eval_qlearning.py`.

@@ -2,21 +2,38 @@
 
 ## Comparison
 - A (Baseline): W19 baseline configuration
-- B (Ship Candidate): results/best_config.json
+- B (Ship Candidate): HPO-tuned configuration from `hpo_results/.../best_params.json`
 
 ## Data
-Results will be stored in:
+Final multi-seed evaluation results generated via `final_eval_qlearning.py`:
 `results/final_eval.csv`
 
-(Currently template only — runs pending or handled by Runner role.)
+## Experiment Results
 
-## Decision
-Status: ITERATE (pending full A/B evaluation)
+### A/B Comparison
 
-## Reasoning
-The ship candidate was selected based on HPO performance and stability,
-but final statistical comparison requires multiple seeded runs.
+Baseline (A) seed results:
+- 91.88
+- 101.86
+- 237.64
+- 142.90
+- 226.92
+Average ≈ 160
 
-## Notes
-This document reflects the experiment structure and decision framework
-outlined in `docs/experiment_brief_andrea.md`.
+Ship Candidate (B) seed results:
+- 500.00
+- 226.62
+- 239.40
+- 117.52
+- 449.04
+Average ≈ 306
+
+### Interpretation
+
+The tuned configuration (B) improves average performance significantly compared to the baseline. However, performance varies across seeds, including one lower-performing run (~117 reward). This suggests the configuration is powerful but not fully stable.
+
+### Decision
+
+ITERATE.
+
+The ship candidate shows strong improvement but requires additional evaluation across more seeds or stability adjustments before confidently shipping.
