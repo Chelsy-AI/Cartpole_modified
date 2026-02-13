@@ -88,11 +88,11 @@ Eval episodes: 10
 
 ### End of Day Checklist
 
-- [ ] Notebook runs without errors
-- [ ] Baseline mean reward recorded
-- [ ] `docs/eval_protocol.md` filled in (metric, seeds, timesteps)
-- [ ] `docs/runbook.md` filled in (Runner name, environment choice)
-- [ ] Posted to Canvas
+- [x] Notebook runs without errors
+- [x] Baseline mean reward recorded
+- [x] `docs/eval_protocol.md` filled in (metric, seeds, timesteps)
+- [x] `docs/runbook.md` filled in (Runner name, environment choice)
+- [x] Posted to Canvas
 
 ---
 
@@ -126,11 +126,11 @@ Eval episodes: 10
 
 ### End of Day Checklist
 
-- [ ] Created a feature branch
-- [ ] Opened a PR
-- [ ] Requested review from teammate
-- [ ] Reviewed another team's PR
-- [ ] `docs/contribution_plan.md` filled in
+- [x] Created a feature branch
+- [x] Opened a PR
+- [x] Requested review from teammate
+- [x] Reviewed another team's PR
+- [x] `docs/contribution_plan.md` filled in
 
 ---
 
@@ -162,10 +162,10 @@ Top 10 Trials:
 
 ### End of Day Checklist
 
-- [ ] HPO notebook runs without errors
-- [ ] `results/hpo_leaderboard.csv` committed (10+ trials)
-- [ ] `results/best_config.json` committed
-- [ ] `docs/ship_candidate.md` filled in (why this config won)
+- [x] HPO notebook runs without errors
+- [x] `results/hpo_leaderboard.csv` committed (10+ trials)
+- [x] `results/best_config.json` committed
+- [x] `docs/ship_candidate.md` filled in (why this config won)
 
 ---
 
@@ -195,10 +195,10 @@ Then add your link to `reports/individual_links.md`:
 
 ### W19 Submission Checklist
 
-- [ ] `results/hpo_leaderboard.csv` has **25+ trials**
-- [ ] `results/best_config.json` exists
-- [ ] PR is merge-ready or merged
-- [ ] Your Google Doc link is in `reports/individual_links.md`
+- [x] `results/hpo_leaderboard.csv` has **25+ trials**
+- [x] `results/best_config.json` exists
+- [x] PR is merge-ready or merged
+- [x] Your Google Doc link is in `reports/individual_links.md`
 
 ---
 
