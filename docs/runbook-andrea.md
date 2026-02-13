@@ -90,3 +90,21 @@ Next Steps
 Final Reflection
 
 This week emphasized learning why certain configurations work rather than simply achieving a high score. The experiments clarified the importance of variance, evaluation methodology, and reproducibility, setting the stage for more rigorous comparisons next week.
+
+---
+
+## Week 20 Update (Andrea)
+
+### Ship Candidate
+Using the configuration stored in:
+`results/best_config.json`
+
+This config was selected from HPO results based on highest mean reward and stable evaluation performance.
+
+### Reproducibility
+Instructions to reproduce results are documented in:
+`docs/how_to_run_andrea.md`
+
+### Notes
+No structural changes were made to notebooks during Week 20.
+Focus was on packaging and documenting the selected configuration for evaluation.
